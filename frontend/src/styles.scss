@@ -40,6 +40,19 @@ html {
 	scroll-behavior: smooth;
 }
 
+/* Глобальные стили для курсора в текстовых блоках (динамически вставляется) */
+.typewriter-text .cursor {
+	display: inline-block;
+	width: 8px;
+	height: 1em;
+	margin-left: 2px;
+	border-radius: 2px;
+	background: rgba(var(--white), 1);
+	box-shadow: 0 0 8px rgba(255,255,255,.25);
+	animation: blink 0.9s ease-in-out infinite;
+	vertical-align: bottom;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }

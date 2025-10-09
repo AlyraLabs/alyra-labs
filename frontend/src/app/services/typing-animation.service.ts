@@ -71,13 +71,13 @@ export class TypingAnimationService {
 
   private stopCursorBlink(): void {
     if (!this.renderer) return;
-    const cursor = document.querySelector('.cursor') as HTMLElement | null;
+    const cursor = document.querySelector('.main-logo .cursor') as HTMLElement | null;
     if (cursor) this.renderer.addClass(cursor, 'stop');
   }
 
   private positionCursorAfterText(): void {
     if (!this.renderer) return;
-    const cursor = document.querySelector('.cursor') as HTMLElement | null;
+    const cursor = document.querySelector('.main-logo .cursor') as HTMLElement | null;
     if (cursor) this.renderer.setStyle(cursor, 'left', '0px');
   }
 
@@ -128,10 +128,17 @@ export class TypingAnimationService {
     const typeNext = () => {
       if (currentIndex < visibleChars.length) {
         const currentText = this.buildTextUpToIndex(fullText, currentIndex);
-        element.innerHTML = currentText;
+        // Добавляем временный курсор на время печати
+        element.innerHTML = `${currentText}<span class="cursor temp-cursor"></span>`;
         currentIndex++;
         const delay = this.fastMinDelay + Math.random() * (this.fastMaxDelay - this.fastMinDelay);
         setTimeout(typeNext, delay);
+      } else {
+        // Печать завершена → удаляем временный курсор
+        const tempCursor = element.querySelector('.temp-cursor');
+        if (tempCursor && tempCursor.parentElement) {
+          tempCursor.parentElement.removeChild(tempCursor);
+        }
       }
     };
     typeNext();
