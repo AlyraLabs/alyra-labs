@@ -1,4 +1,3 @@
-/* Удаление всех отступов и бордеров */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -44,12 +43,10 @@ textarea,input:focus {
 	border: none;
 }
 
-/* Общий стиль для текста плейсхолдера */
 ::placeholder {
 	color: #bfbfbf;
 }
 
-/* Удаление стилизации поля поиска */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
@@ -57,25 +54,22 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
 
-/* Стили для автозаполнения в браузерах WebKit, таких как Chrome и Safari */
 input[type="search"]:-webkit-autofill {
-  box-shadow: 0 0 0 30px #E1E1E1 inset; /* Задний фон, чтобы перекрыть стандартные стили */
-  -webkit-text-fill-color: #161616; /* Цвет текста */
-	border-radius: 42px; /* Скругление углов если нужно */
+  box-shadow: 0 0 0 30px #E1E1E1 inset;
+  -webkit-text-fill-color: #161616;
+	border-radius: 42px;
 }
 
- /* Стили для автозаполнения в браузерах Microsoft (Edge) */
 input[type="search"]::placeholder:-ms-input-placeholder {
   color: #E1E1E1;
 }
 
-/* Убирает стрелки-кнопки справа в инпуте */
 input[type="number"]::-webkit-inner-spin-button, 
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    margin: 0; /* Убирает стрелки в Chrome, Safari и Edge */
+    margin: 0;
 }
 
 input[type="number"] {
-	-moz-appearance: textfield; /* Убирает стрелки в Firefox */
+	-moz-appearance: textfield;
 }
